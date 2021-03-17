@@ -1,0 +1,15 @@
+
+.card{
+    background-color: #fcfcfc;
+    height: 35rem;
+    width: 45rem;
+    border-radius: 12px;
+}
+
+.card a{
+    color: #4a4a4a;
+}
+
+.card-content {
+    height: 32rem;
+}

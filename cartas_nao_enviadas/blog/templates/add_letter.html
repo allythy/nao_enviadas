@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block contect %}
+    <h1>Adicionar messagem</h1>
+
+    <form class="control" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="button">Enviar</button>
+    </form>
+{% endblock %}

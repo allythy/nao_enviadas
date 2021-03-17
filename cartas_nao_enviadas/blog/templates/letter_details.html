@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block contect %}
+    <h1>{{ letter.name }}</h1>
+    <hr>
+    {{ letter.message }}
+    <br><br>
+    <a href="{% url 'home' %}">Voltar para home</a>
+{% endblock %}
