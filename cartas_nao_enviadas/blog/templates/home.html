@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block contect %}
+
+<form action="{% url 'search_results' %}" method="get">
+  <input name="q" type="text" placeholder="Search...">
+</form>
+
 <section class="section">
     <div class="container">
         <div class="columns is-multiline">
@@ -16,7 +21,11 @@
                             <footer class="card-footer">
                               <p class="card-footer-item">
                                 <span>
-                                  Para: <a href="{% url 'letter-datail' letter.pk %}">{{ letter.name }}</a>
+                                  Para: 
+                                  <a 
+                                    href="{% url 'letter-datail' letter.pk %}">
+                                    {{ letter.name }}
+                                </a>
                                 </span>
                               </p>
                             </footer>
