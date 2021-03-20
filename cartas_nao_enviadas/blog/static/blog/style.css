@@ -1,17 +1,26 @@
 
 .card{
     background-color: #fcfcfc;
-    height: 35rem;
-    width: 45rem;
+    /* height: 27rem; */
     border-radius: 12px;
 }
 
 .card a{
     color: #4a4a4a;
 }
+.teste{
+    color:red;
+}
+/* .card-content {
+    height: 26rem;
+} */
 
-.card-content {
-    height: 32rem;
+.card-footer{
+    border-top: none;
+}
+.card-footer-item{
+    justify-content: left;
+    padding: .75rem .75rem .75rem 1.5rem;
 }
 
 .align-center{
@@ -23,4 +32,11 @@
 .align-center .card{
     margin-bottom: 2rem;
     width: 27rem;
+}
+
+.letter-text{
+    color: #363636;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.5;
 }

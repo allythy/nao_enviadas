@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
 {% block contect %}
-
 <form action="{% url 'search_results' %}" method="get">
-  <input name="q" type="text" placeholder="Search...">
+  <div class="field has-addons">
+    <div class="control is-expanded">
+      <input class="input"  name="q" type="text" placeholder="Search...">
+    </div>
+    <div class="control">
+      <button  type="submit" class="button">Enviar</button>
+
+    </div>
+  </div>
 </form>
 
 <section class="section">
@@ -12,24 +19,25 @@
             {% for letter in object_list%}
                 <div class="column is-4-widescreen mb-6">
                     <article>
-                        <div class="card">
-                            <div class="card-content">
-                              <p class="title">
-                                {{ letter.message }}
-                              </p>
-                            </div>
-                            <footer class="card-footer">
-                              <p class="card-footer-item">
-                                <span>
-                                  Para: 
-                                  <a 
+                      <div class="card">
+                        <div class="card-content">
+                          <p class="letter-text">
+                            {{ letter.message }}
+                            
+                          </p>
+                        </div>
+                        <footer class="card-footer">
+                          <p class="card-footer-item">
+                            <span>
+                                Para:
+                                <a
                                     href="{% url 'letter-datail' letter.pk %}">
-                                    {{ letter.name }}
+                                {{ letter.name }}
                                 </a>
-                                </span>
-                              </p>
-                            </footer>
-                          </div>
+                            </span>
+                        </p>
+                        </footer>
+                      </div>
                     </article>
                 </div>
             {% endfor %}
