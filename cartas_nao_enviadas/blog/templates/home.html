@@ -1,17 +1,30 @@
 {% extends 'base.html' %}
 
 {% block contect %}
-<form action="{% url 'search_results' %}" method="get">
-  <div class="field has-addons">
-    <div class="control is-expanded">
-      <input class="input"  name="q" type="text" placeholder="Search...">
-    </div>
-    <div class="control">
-      <button  type="submit" class="button">Enviar</button>
 
+<header>
+  <section class="section">
+    <div class="container">
+        <div class="search-center">
+            <form action="{% url 'search_results' %}" method="get">
+              <div class="field has-addons">
+                <div class="control control has-icons-right pb-6 ">
+                  <span class="icon is-right">
+                    <i class="fas fa-search"></i>
+                </span>
+                  <input 
+                  class="input"
+                  name="q" 
+                  type="text" 
+                  placeholder="Digite um nome para fazer a buscar..."
+                  >
+                </div>
+              </div>
+            </form>
+        </div>
     </div>
-  </div>
-</form>
+</section>
+</header>
 
 <section class="section">
     <div class="container">

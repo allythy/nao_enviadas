@@ -5,8 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cartas não enviadas!</title>
+    <title>Não enviadas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/8111ef0cbd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{% static '/blog/style.css' %}">
   </head>
   <body>
@@ -16,8 +17,8 @@
             <nav class="navbar">
                 <div class="container">
                   <div class="navbar-brand">
-                    <a class="navbar-item" href="{% url 'home' %}">
-                      <img src="" alt="Logo">
+                    <a class="navbar-item has-text-weight-bold" href="{% url 'home' %}">
+                      <img src="" alt="Não envidas">
                     </a>
                     <span class="navbar-burger" data-target="navbarMenuHeroA">
                       <span></span>
@@ -27,13 +28,13 @@
                   </div>
                   <div id="navbarMenuHeroA" class="navbar-menu">
                     <div class="navbar-end">
-                      <a class="navbar-item is-active">
+                      <a class="navbar-item has-text-weight-bold" href="{% url 'home' %}">
                         Inicio
                       </a>
-                      <a class="navbar-item" href="{% url 'add-letter' %}">
+                      <a class="navbar-item has-text-weight-bold" href="{% url 'add-letter' %}">
                         Adicionar
                       </a>
-                      <a class="navbar-item">
+                      <a class="navbar-item has-text-weight-bold">
                         Sobre
                       </a>
                     </div>

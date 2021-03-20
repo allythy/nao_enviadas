@@ -1,4 +1,11 @@
+body{
+    background-color: #fcfcfc;
+}
 
+input:active, .input:focus{
+    border-color:#9B9B9B;
+    box-shadow: none;}
+    
 .card{
     background-color: #fcfcfc;
     /* height: 27rem; */
@@ -39,4 +46,23 @@
     font-size: 24px;
     font-weight: 600;
     line-height: 1.5;
+}
+.search-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+}
+
+header .input{
+    width: 50vw;
+    background-color: #E6E6E6;
+    box-shadow: none;
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+.fa-search{
+    color: #000000;
 }
