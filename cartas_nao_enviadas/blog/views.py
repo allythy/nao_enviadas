@@ -6,6 +6,7 @@ from .forms import LetterForm
 class HomeView(ListView):
     model = Letter
     template_name = "home.html"
+    ordering = ["-letter_date"]
 
 
 class LetterDetailView(DeleteView):

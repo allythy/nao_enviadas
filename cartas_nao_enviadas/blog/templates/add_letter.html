@@ -1,11 +1,26 @@
 {% extends 'base.html' %}
-
 {% block contect %}
-    <h1>Adicionar messagem</h1>
-
     <form class="control" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="button">Enviar</button>
     </form>
+    <!-- <form  method="POST">
+        {% csrf_token %}
+        <div class="field">
+            <label class="label">Nome</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="e.g Alex Smith" name="name">
+            </div>
+          </div>
+          
+          <div class="field">
+            <label class="label">Mensagem</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Textarea" name="message"></textarea>
+            </div>
+          </div>
+    
+        <button class="button is-link">Submit</button>
+    </form> -->
 {% endblock %}

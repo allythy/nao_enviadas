@@ -1,9 +1,34 @@
 {% extends 'base.html' %}
 
 {% block contect %}
-    <h1>{{ letter.name }}</h1>
-    <hr>
-    {{ letter.message }}
-    <br><br>
-    <a href="{% url 'home' %}">Voltar para home</a>
+
+<section class="section">
+    <div class="container align-center">
+        <div class="columns">
+            <div class="column">
+                <article>
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title">
+                                {{ letter.message }}
+                            </p>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    Para:
+                                    <a
+                                        href="{% url 'letter-datail' letter.pk %}">
+                                    {{ letter.name }}
+                                    </a>
+                                </span>
+                            </p>
+                        </footer>
+                    </div>
+                </article>
+                <p></p>{{ letter.letter_date }}</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

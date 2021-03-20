@@ -5,7 +5,7 @@ from .models import Letter
 class LetterForm(forms.ModelForm):
     class Meta:
         model = Letter
-        fields = ('name', 'author', 'message')
+        fields = ('name', 'message')
 
         labels = {
             'name': 'Para',
@@ -14,6 +14,5 @@ class LetterForm(forms.ModelForm):
 
         widgets = {
             'name': forms.TextInput(attrs={'class': 'input'}),
-            'author': forms.Select(attrs={'class': 'select'}),
             'message': forms.Textarea(attrs={'class': 'textarea'})
         }
