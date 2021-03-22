@@ -34,6 +34,7 @@ input:active, .input:focus{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 70vh;
 }
 
 .align-center .card{
@@ -65,4 +66,12 @@ header .input{
 
 .fa-search{
     color: #000000;
+}
+
+.icon{
+    padding-top: 10px;
+}
+
+.navbar{
+    background-color: transparent;
 }

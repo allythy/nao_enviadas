@@ -3,32 +3,33 @@
 {% block contect %}
 
 <section class="section">
-    <div class="container align-center">
-        <div class="columns">
-            <div class="column">
-                <div class="card">
-                    <div class="card-content">
-                      <p class="letter-text">
-                        {{ letter.message }}
-                        
-                      </p>
-                    </div>
-                    <footer class="card-footer">
-                      <p class="card-footer-item">
-                        <span>
-                            Para:
-                            <a
-                                href="{% url 'letter-datail' letter.pk %}">
-                            {{ letter.name }}
-                            </a>
-                        </span>
-                    </p>
-                    </footer>
-                  </div>
-                </article>
-                <p></p>{{ letter.letter_date }}</p>
+  <div class="container align-center">
+    <div class="columns">
+      <div class="column">
+        <article>
+          <div class="card">
+            <div class="card-content">
+              <p class="letter-text">
+                {{ letter.message }}
+              </p>
             </div>
-        </div>
+            <footer class="card-footer">
+              <p class="card-footer-item">
+                <span>
+                  Para:
+                  <a href="{% url 'letter-datail' letter.pk %}">
+                    {{ letter.name }}
+                  </a>
+                </span>
+              </p>
+            </footer>
+          </div>
+        </article>
+        <p class="pl-2">
+          {{ letter.letter_date }}
+        </p>
+      </div>
     </div>
+  </div>
 </section>
 {% endblock %}
