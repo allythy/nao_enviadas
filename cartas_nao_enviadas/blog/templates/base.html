@@ -45,6 +45,47 @@
         {% block contect %}
         {% endblock %}
     </div>
+    <footer class="footer">
+      <div class="section">
+        <div class="container">
+          <hr>
+          <div class="level">
+            <div class="level-left">
+              <div class="level-item">
+                <a class="title is-5" href="#">
+                  <p class="has-text-weight-bold">Não enviadas</p>
+                </a>
+              </div>
+            </div>
+            <div class="level-right">
+              <a class="has-text-black pl-5 has-text-weight-bold" href="{% url 'home' %}">
+                Inicio
+              </a>
+              <a class="has-text-black pl-5 has-text-weight-bold" href="{% url 'add-letter' %}">
+                Adicionar
+              </a>
+              <a class="has-text-black pl-5 has-text-weight-bold">
+                Sobre
+              </a>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+            </div>
+            <div class="column has-text-centered has-text-right-tablet">
+              <p class="subtitle is-6">
+                <p class="text-muted">
+                  <strong>Todo conteúdo está licenciado sobre Creative Commons
+                  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+                  Creative Commons.</a>
+                </strong>
+                </p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </section>
   </body>
 </html>
