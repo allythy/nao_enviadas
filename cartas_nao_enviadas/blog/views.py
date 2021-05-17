@@ -9,6 +9,20 @@ class HomeView(ListView):
     model = Letter
     template_name = "home.html"
     ordering = ["-letter_date"]
+    paginate_by = 9
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        query = self.request.GET.get('busca')
+        if query:
+            qs = qs.filter(Q(name__contains=query)|Q(message__contains=query))
+        return qs
+
+    def get_context_data(self):
+        context = super().get_context_data()
+        return {**context, 'busca': self.request.GET.get('busca', '')}
+    
+    # queryset = Letter.objects.filter(name__contains='allythy')
 
 
 class LetterDetailView(DeleteView):
@@ -21,14 +35,3 @@ class AddLetterView(CreateView):
     form_class = LetterForm
     template_name = 'add_letter.html'
     # fields = '__all__'
-
-
-class SearchResultsView(ListView):
-    model = Letter
-    template_name = 'search_results.html'
-
-    def get_queryset(self):
-        query = self.request.GET.get('q')
-        object_list = Letter.objects.filter(Q(name__contains=query))
-        return object_list
-    # queryset = Letter.objects.filter(name__contains='allythy')

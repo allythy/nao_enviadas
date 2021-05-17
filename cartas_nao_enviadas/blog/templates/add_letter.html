@@ -1,10 +1,29 @@
 {% extends 'base.html' %}
 {% block contect %}
-    <form class="control" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="button">Enviar</button>
-    </form>
+<section class="section">
+  <div class="container">
+      <div class="search-center">
+        <form class="control" method="POST">
+          {% csrf_token %}
+          <div class="field">
+            <label class="label" for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            <div class="control">
+              <input class="input" type="text"  id="{{ form.name.id_for_label }}" placeholder="e.g Alex Smith" name="{{ form.name.html_name }}">
+            </div>
+          </div>
+          
+          <div class="field">
+            <label class="label" for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+            <div class="control">
+              <textarea class="textarea" id="{{ form.message.id_for_label }}" placeholder="Textarea" name="{{ form.message.html_name }}"></textarea>
+            </div>
+          </div>
+          <button class="button">Enviar</button>
+      </form>
+      </div>
+  </div>
+</section>
+
     <!-- <form  method="POST">
         {% csrf_token %}
         <div class="field">

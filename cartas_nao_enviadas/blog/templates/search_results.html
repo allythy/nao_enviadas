@@ -4,7 +4,7 @@
 <section class="section">
     <div class="container">
         <div class="columns is-multiline">
-            {% for letter in object_list%}
+            {% for letter in page_obj %}
                 <div class="column is-4-widescreen mb-6">
                     <div class="card">
                         <div class="card-content">
@@ -27,8 +27,30 @@
                       </div>
                     </article>
                 </div>
+            {% empty %}
+              <p>Não há resultados.</p>
             {% endfor %}
         </div>
+
+
+
+<div class="pagination">
+  <span class="step-links">
+      {% if page_obj.has_previous %}
+          <a href="?page=1">&laquo; first</a>
+          <a href="?page={{ page_obj.previous_page_number }}">anterior</a>
+      {% endif %}
+
+      <span class="current">
+          Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+      </span>
+
+      {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}">próxima</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}">última &raquo;</a>
+      {% endif %}
+  </span>
+</div>
 
     </div>
 </section>

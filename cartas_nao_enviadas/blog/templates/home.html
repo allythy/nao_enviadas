@@ -6,7 +6,7 @@
   <section class="section">
     <div class="container">
         <div class="search-center">
-            <form action="{% url 'search_results' %}" method="get">
+            <form action="" method="get">
               <div class="field has-addons">
                 <div class="control control has-icons-right pb-6 ">
                   <span class="icon is-right">
@@ -14,8 +14,9 @@
                 </span>
                   <input 
                   class="input is-medium"
-                  name="q" 
+                  name="busca" 
                   type="text" 
+                  value="{{ busca }}"
                   placeholder="Digite um nome para fazer a buscar..."
                   >
                 </div>
@@ -29,7 +30,7 @@
 <section class="section">
     <div class="container">
         <div class="columns is-multiline">
-            {% for letter in object_list%}
+            {% for letter in object_list %}
                 <div class="column is-4-widescreen mb-6">
                     <article>
                       <div class="card">
@@ -53,8 +54,30 @@
                       </div>
                     </article>
                 </div>
+                {% empty %}
+                    Não há mensagens.
             {% endfor %}
         </div>
+
+
+<div class="pagination">
+  <span class="step-links">
+      {% if page_obj.has_previous %}
+          <a href="?busca={{ busca }}&page=1">&laquo; primeira</a>
+          <a href="?busca={{ busca }}&page={{ page_obj.previous_page_number }}">anterior</a>
+      {% endif %}
+
+      <span class="current">
+          Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+      </span>
+
+      {% if page_obj.has_next %}
+          <a href="?busca={{ busca }}&page={{ page_obj.next_page_number }}">próxima</a>
+          <a href="?busca={{ busca }}&page={{ page_obj.paginator.num_pages }}">última &raquo;</a>
+      {% endif %}
+  </span>
+</div>
+
 
     </div>
 </section>
