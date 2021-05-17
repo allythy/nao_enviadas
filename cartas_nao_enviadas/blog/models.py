@@ -1,14 +1,16 @@
 from datetime import date, datetime
+from colorfield.fields import ColorField
 
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
-
 class Letter(models.Model):
+    
     name = models.CharField(max_length=255)
     message = models.TextField(max_length=250)
     letter_date = models.DateField(auto_now_add=True)
+    color = ColorField(default='#FFF')
 
 
     def __str__(self):

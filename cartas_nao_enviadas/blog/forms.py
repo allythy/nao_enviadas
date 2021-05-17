@@ -1,4 +1,5 @@
 from django import forms
+from colorfield.widgets import ColorWidget
 
 from .models import Letter
 
@@ -6,14 +7,10 @@ from .models import Letter
 class LetterForm(forms.ModelForm):
     class Meta:
         model = Letter
-        fields = ('name', 'message')
+        fields = ('name', 'message', 'color')
 
         labels = {
             'name': 'Para',
-            'message': 'Mensagem'
-        }
-
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'input'}),
-            'message': forms.Textarea(attrs={'class': 'textarea'})
+            'message': 'Mensagem',
+            'color': 'Cor'
         }

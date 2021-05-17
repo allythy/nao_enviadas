@@ -18,6 +18,10 @@
               <textarea class="textarea" id="{{ form.message.id_for_label }}" placeholder="Textarea" name="{{ form.message.html_name }}"></textarea>
             </div>
           </div>
+          <div class="field">
+            <label class="label" for="{{ form.color.id_for_label }}">{{ form.color.label }}</label>
+          {{ form.color }}
+          </div>
           <button class="button">Enviar</button>
       </form>
       </div>
@@ -42,4 +46,8 @@
     
         <button class="button is-link">Submit</button>
     </form> -->
+{% endblock %}
+
+{% block extra_header %}
+   {{ form.media }}
 {% endblock %}
