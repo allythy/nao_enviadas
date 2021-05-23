@@ -7,17 +7,17 @@
     <div class="columns">
       <div class="column">
         <article>
-          <div class="card">
+          <div class="card" style="background-color: {{ letter.color }}">
             <div class="card-content">
-              <p class="letter-text">
+              <p class="letter-text" style="color: {{ letter.text_color }}">
                 {{ letter.message }}
               </p>
             </div>
             <footer class="card-footer">
               <p class="card-footer-item">
-                <span>
+                <span style="color: {{ letter.text_color }}">
                   Para:
-                  <a href="{% url 'letter-datail' letter.pk %}">
+                  <a href="{% url 'letter-datail' letter.pk %}" style="color: {{ letter.text_color }}">
                     {{ letter.name }}
                   </a>
                 </span>
@@ -26,7 +26,7 @@
           </div>
         </article>
         <p class="pl-2">
-          {{ letter.letter_date|date:'d/m/Y' }}
+          {{ letter.letter_date }}
         </p>
       </div>
     </div>

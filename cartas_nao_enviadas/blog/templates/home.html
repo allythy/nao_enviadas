@@ -35,17 +35,17 @@
                     <article>
                       <div class="card" style="background-color: {{ letter.color }}">
                         <div class="card-content">
-                          <p class="letter-text">
+                          <p class="letter-text" style="color: {{ letter.text_color }}">
                             {{ letter.message }}
                             
                           </p>
                         </div>
                         <footer class="card-footer">
-                          <p class="card-footer-item">
-                            <span>
+                          <p class="card-footer-item" style="color: {{ letter.text_color }}">
+                            <span style="color: {{ letter.text_color }}">
                                 Para:
                                 <a
-                                    href="{% url 'letter-datail' letter.pk %}">
+                                    href="{% url 'letter-datail' letter.pk %}" style="color: {{ letter.text_color }}">
                                 {{ letter.name }}
                                 </a>
                             </span>
