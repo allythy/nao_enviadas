@@ -16,10 +16,7 @@
             <footer class="card-footer">
               <p class="card-footer-item">
                 <span style="color: {{ letter.text_color }}">
-                  Para:
-                  <a href="{% url 'letter-datail' letter.pk %}" style="color: {{ letter.text_color }}">
-                    {{ letter.name }}
-                  </a>
+                  Para: {{ letter.name }}
                 </span>
               </p>
             </footer>

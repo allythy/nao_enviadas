@@ -24,25 +24,24 @@
     <div class="columns is-multiline">
       {% for letter in object_list %}
         <div class="column is-4-widescreen mb-6">
-          <article>
-            <div class="card" style="background-color: {{ letter.color }}">
-              <div class="card-content">
-                <p class="letter-text" style="color: {{ letter.text_color }}">
-                  {{ letter.message }}
-                </p>
+          <a href="{% url 'letter-datail' letter.pk %}">
+            <article> 
+              <div class="card" style="background-color: {{ letter.color }}">
+                <div class="card-content">
+                  <p class="letter-text" style="color: {{ letter.text_color }}">
+                    {{ letter.message }}
+                  </p>
+                </div>
+                <footer class="card-footer">
+                  <p class="card-footer-item" style="color: {{ letter.text_color }}">
+                    <span style="color: {{ letter.text_color }}">
+                      Para: {{ letter.name }}
+                    </span>
+                  </p>
+                </footer>
               </div>
-              <footer class="card-footer">
-                <p class="card-footer-item" style="color: {{ letter.text_color }}">
-                  <span style="color: {{ letter.text_color }}">
-                    Para:
-                    <a href="{% url 'letter-datail' letter.pk %}" style="color: {{ letter.text_color }}">
-                      {{ letter.name }}
-                    </a>
-                  </span>
-                </p>
-              </footer>
-            </div>
-          </article>
+            </article>
+          </a>
         </div>
       {% empty %}
         Não há mensagens.
