@@ -1,0 +1,33 @@
+<header>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="{% url 'home' %}">
+          <img src="" alt="Não envidas">
+        </a>
+        <span class="navbar-burger" data-target="navbarMenuHeroA">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenuHeroA" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item has-text-weight-bold" href="{% url 'home' %}">
+            Inicio
+          </a>
+          <a class="navbar-item has-text-weight-bold" href="{% url 'add-letter' %}">
+            Adicionar
+          </a>
+          <a class="navbar-item has-text-weight-bold">
+            Sobre
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+{% if request.path != "/" %}
+{% else %}
+  {% include "includes/search_results.html" %}
+{% endif %}
+</header>
