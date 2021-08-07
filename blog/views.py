@@ -21,7 +21,11 @@ class HomeView(ListView):
 
     def get_context_data(self):
         context = super().get_context_data()
-        return {**context, "busca": self.request.GET.get("busca", "")}
+        return {
+            **context,
+            "busca": self.request.GET.get("busca", ""),
+            "searchbar": True,
+        }
 
 
 class LetterDetailView(DeleteView):
