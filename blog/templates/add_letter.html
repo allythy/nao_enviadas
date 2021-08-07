@@ -2,33 +2,37 @@
 {% block content %}
 <section class="section">
   <div class="container">
-      <div class="search-center">
-        <form class="control" method="POST">
-          {% csrf_token %}
-          <div class="field">
-            <label class="label" for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
-            <div class="control">
-              <input class="input" type="text"  id="{{ form.name.id_for_label }}" placeholder="e.g Maria João" name="{{ form.name.html_name }}">
-            </div>
+    <div class="search-center">
+      <form class="control" method="POST">
+        {% csrf_token %}
+        <div class="field">
+          <label class="label" for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+          <p class="error">{{ form.name.errors }}</p>
+          <div class="control">
+            <input class="input" type="text" required value="{{ form.name.value|default_if_none:'' }}" id="{{ form.name.id_for_label }}"
+              placeholder="e.g Maria João" name="{{ form.name.html_name }}">
           </div>
-          
-          <div class="field">
-            <label class="label" for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
-            <div class="control">
-              <textarea class="textarea" id="{{ form.message.id_for_label }}" maxlength="250" placeholder="Digite sua mensagem" name="{{ form.message.html_name }}"></textarea>
-            </div>
+        </div>
+        <div class="field">
+          <label class="label" for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+          <p class="error">{{ form.message.errors }}</p>
+          <div class="control">
+            <textarea class="textarea" required id="{{ form.message.id_for_label }}" maxlength="250"
+              placeholder="Digite sua mensagem" name="{{ form.message.html_name }}">{{ form.message.value|default_if_none:'' }}</textarea>
           </div>
-          <div class="field">
-            <label class="label" for="{{ form.color.id_for_label }}">{{ form.color.label }}</label>
+        </div>
+        <div class="field">
+          <label class="label" for="{{ form.color.id_for_label }}">{{ form.color.label }}</label>
+          <p class="error">{{ form.color.errors }}</p>
           {{ form.color }}
-          </div>
-          <button class="button">Enviar</button>
+        </div>
+        <button class="button">Enviar</button>
       </form>
-      </div>
+    </div>
   </div>
 </section>
 {% endblock %}
 
 {% block extra_header %}
-   {{ form.media }}
+{{ form.media }}
 {% endblock %}
